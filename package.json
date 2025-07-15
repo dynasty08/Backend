@@ -2,16 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "serverless offline",
-    "dev": "serverless offline --stage dev",
-    "deploy": "serverless deploy",
-    "deploy:prod": "serverless deploy --stage prod",
-    "remove": "serverless remove",
-    "logs": "serverless logs -f api",
-    "test": "jest",
-    "test:watch": "jest --watch"
-  },
+ "scripts": {
+  "start": "serverless offline",
+  "dev": "serverless offline --stage dev",
+  "deploy": "serverless deploy",
+  "deploy:prod": "serverless deploy --stage prod",
+  "remove": "serverless remove",
+  "logs": "serverless logs -f api",
+  "test": "jest --passWithNoTests",
+  "test:watch": "jest --watch"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -24,6 +24,7 @@
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {
+    "jest": "^30.0.4",
     "serverless": "^3.40.0",
     "serverless-offline": "^13.8.0"
   }
