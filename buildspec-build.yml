@@ -6,10 +6,12 @@ phases:
     commands:
       - npm install -g serverless@3
       - npm install
+      - chmod +x node_modules/.bin/*
   build:
     commands:
       - echo "Building application"
-      - echo "Skipping tests for now"
+      - echo "Running tests"
+      - npx jest --passWithNoTests
       - echo "Build completed successfully"
 artifacts:
   files:
