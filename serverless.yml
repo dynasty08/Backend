@@ -1,0 +1,36 @@
+service: my-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-southeast-1
+  stage: ${opt:stage, 'dev'}
+  environment:
+    DB_HOST: serverlessdatabase.cv646auk2i3w.ap-southeast-1.rds.amazonaws.com
+    DB_NAME: serverlessdatabase
+    SECRET_ARN: arn:aws:secretsmanager:ap-southeast-1:194416698840:secret:rds!db-8738229a-82d2-4946-af61-328f6d42a758-Dqo6KJ
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - secretsmanager:GetSecretValue
+      Resource: arn:aws:secretsmanager:ap-southeast-1:194416698840:secret:rds!db-8738229a-82d2-4946-af61-328f6d42a758-Dqo6KJ
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+      - http:
+          path: /
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
