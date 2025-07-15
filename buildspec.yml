@@ -1,5 +1,4 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
@@ -7,16 +6,10 @@ phases:
     commands:
       - npm install -g serverless@3
       - npm install
-  
   build:
     commands:
-      - echo "Deploying serverless application"
-      - serverless deploy --stage dev
-  
-  post_build:
-    commands:
-      - echo "Deployment completed"
-
+      - echo "Building application"
+      - echo "Build completed successfully"
 artifacts:
   files:
     - '**/*'
