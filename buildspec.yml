@@ -1,15 +1,15 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
       nodejs: 18
     commands:
-      - npm install -g serverless@3
+      - npm install -g serverless
       - npm install
   build:
     commands:
-      - echo "Building application"
-      - echo "Build completed successfully"
+      - serverless deploy --stage dev
 artifacts:
   files:
     - '**/*'

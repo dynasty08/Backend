@@ -1,0 +1,14 @@
+{
+  "name": "user-auth-lambda",
+  "version": "1.0.0",
+  "description": "Lambda functions for user authentication",
+  "main": "register-simple.js",
+  "dependencies": {
+    "aws-sdk": "^2.1450.0",
+    "@aws-sdk/client-secrets-manager": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "uuid": "^9.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.11.0"
+  }
+}

@@ -1,4 +1,4 @@
-service: my-backend
+service: my-backend-clean
 
 provider:
   name: aws
@@ -6,52 +6,165 @@ provider:
   region: ap-southeast-1
   stage: ${opt:stage, 'dev'}
   environment:
+    USERS_TABLE: ${self:service}-${self:provider.stage}-users
     DB_HOST: serverlessdatabase.cv646auk2i3w.ap-southeast-1.rds.amazonaws.com
     DB_NAME: serverlessdatabase
     SECRET_ARN: arn:aws:secretsmanager:ap-southeast-1:194416698840:secret:rds!db-8738229a-82d2-4946-af61-328f6d42a758-Dqo6KJ
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - secretsmanager:GetSecretValue
-      Resource: arn:aws:secretsmanager:ap-southeast-1:194416698840:secret:rds!db-8738229a-82d2-4946-af61-328f6d42a758-Dqo6KJ
-
-  vpc:
-    securityGroupIds:
-      - sg-0765ca947dc8a485f
-    subnetIds:
-      - subnet-03cee48389a32d20f
-      - subnet-0d446c1fdd15bdcbd
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [UsersTable, Arn]
+            - Fn::Join: ['/', [Fn::GetAtt: [UsersTable, Arn], 'index', '*']]
+        - Effect: Allow
+          Action:
+            - secretsmanager:GetSecretValue
+          Resource: arn:aws:secretsmanager:ap-southeast-1:194416698840:secret:rds!db-8738229a-82d2-4946-af61-328f6d42a758-Dqo6KJ
+        - Effect: Allow
+          Action:
+            - s3:GetObject
+            - s3:GetObjectVersion
+          Resource: arn:aws:s3:::awsdynasty/data/*
 
 functions:
-  app:
-    handler: index.handler
-    events:
-      - http:
-          path: /{proxy+}
-          method: ANY
-          cors: true
-      - http:
-          path: /
-          method: ANY
-          cors: true
-
+  # Simple test function
   hello:
     handler: lambda/hello.handler
     events:
       - http:
           path: /hello
           method: get
+          cors: true
 
-  goodbye:
-    handler: lambda/goodbye.handler
+  # User registration (saves to DynamoDB)
+  register:
+    handler: lambda/register-simple.handler
     events:
       - http:
-          path: /goodbye
+          path: /register
           method: post
+          cors: true
 
-plugins:
-  - serverless-offline
+  # User login (checks DynamoDB)
+  login:
+    handler: lambda/login-simple.handler
+    events:
+      - http:
+          path: /login
+          method: post
+          cors: true
 
-custom:
-  serverless-offline:
-    noPrependStageInUrl: true
+  # Get all users
+  getUsers:
+    handler: lambda/get-users-simple.handler
+    events:
+      - http:
+          path: /users
+          method: get
+          cors: true
+
+  # Get active sessions count
+  getActiveSessions:
+    handler: lambda/get-active-sessions.handler
+    events:
+      - http:
+          path: /active-sessions
+          method: get
+          cors: true
+
+  # Mock database info (fallback)
+  testDatabase:
+    handler: lambda/test-database.handler
+    events:
+      - http:
+          path: /test-database
+          method: get
+          cors: true
+
+  # PostgreSQL database info (VPC enabled with endpoints)
+  getPostgresData:
+    handler: lambda/get-postgres-data.handler
+    timeout: 30
+    vpc:
+      securityGroupIds:
+        - sg-0ed89bc24456149e1
+      subnetIds:
+        - subnet-0733c251f5d150a45
+        - subnet-0e4fc9f338aa5ad71
+    events:
+      - http:
+          path: /database
+          method: get
+          cors: true
+
+  # S3 to PostgreSQL processor 
+  s3DataProcessor:
+    handler: lambda/s3-to-rds-processor.handler
+    timeout: 60
+    vpc:
+      securityGroupIds:
+        - sg-0ed89bc24456149e1
+      subnetIds:
+        - subnet-0733c251f5d150a45
+        - subnet-0e4fc9f338aa5ad71
+
+  # Check processed files in PostgreSQL
+  checkProcessedFiles:
+    handler: lambda/check-processed-files.handler
+    timeout: 30
+    vpc:
+      securityGroupIds:
+        - sg-0ed89bc24456149e1
+      subnetIds:
+        - subnet-0733c251f5d150a45
+        - subnet-0e4fc9f338aa5ad71
+    events:
+      - http:
+          path: /processed-files
+          method: get
+          cors: true
+
+
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${self:provider.stage}-users
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+        GlobalSecondaryIndexes:
+          - IndexName: EmailIndex
+            KeySchema:
+              - AttributeName: email
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+        BillingMode: PAY_PER_REQUEST
+    
+    ProcessedFilesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: processed-files-table
+        AttributeDefinitions:
+          - AttributeName: fileId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: fileId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST

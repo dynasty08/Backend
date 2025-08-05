@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Manual API Gateway for existing Lambda functions'
+
+Parameters:
+  LambdaFunctionArn:
+    Type: String
+    Description: ARN of existing Lambda function
+    Default: arn:aws:lambda:ap-southeast-1:194416698840:function:my-backend-clean-dev-register
+
+Resources:
+  ManualApiGateway:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: manual-serverless-api
+      Description: Manually created API Gateway
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
+
+  ApiGatewayResource:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      RestApiId: !Ref ManualApiGateway
+      ParentId: !GetAtt ManualApiGateway.RootResourceId
+      PathPart: manual-register
+
+  ApiGatewayMethod:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      RestApiId: !Ref ManualApiGateway
+      ResourceId: !Ref ApiGatewayResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaFunctionArn}/invocations'
+
+  ApiGatewayDeployment:
+    Type: AWS::ApiGateway::Deployment
+    DependsOn: ApiGatewayMethod
+    Properties:
+      RestApiId: !Ref ManualApiGateway
+      StageName: manual
+
+  LambdaPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref LambdaFunctionArn
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ManualApiGateway}/*/POST/manual-register'
+
+Outputs:
+  ApiGatewayUrl:
+    Description: URL of the manual API Gateway
+    Value: !Sub 'https://${ManualApiGateway}.execute-api.${AWS::Region}.amazonaws.com/manual'
