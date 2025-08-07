@@ -6,7 +6,7 @@
     },
     "provider": {
       "name": "aws",
-      "runtime": "nodejs18.x",
+      "runtime": "nodejs20.x",
       "region": "ap-southeast-1",
       "stage": "dev",
       "environment": {
@@ -306,10 +306,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/hello.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-hello",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -339,10 +339,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/register-simple.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-register",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -372,10 +372,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/login-simple.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-login",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -405,10 +405,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/get-users-simple.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-getUsers",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -438,10 +438,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/get-active-sessions.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-getActiveSessions",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -471,10 +471,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/test-database.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-testDatabase",
               "MemorySize": 1024,
               "Timeout": 6,
@@ -504,10 +504,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/get-postgres-data.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-getPostgresData",
               "MemorySize": 1024,
               "Timeout": 30,
@@ -546,10 +546,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/s3-to-rds-processor.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-s3DataProcessor",
               "MemorySize": 1024,
               "Timeout": 60,
@@ -588,10 +588,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z/my-backend-clean.zip"
+                "S3Key": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z/my-backend-clean.zip"
               },
               "Handler": "lambda/check-processed-files.handler",
-              "Runtime": "nodejs18.x",
+              "Runtime": "nodejs20.x",
               "FunctionName": "my-backend-clean-dev-checkProcessedFiles",
               "MemorySize": 1024,
               "Timeout": 30,
@@ -623,94 +623,94 @@
               "CheckProcessedFilesLogGroup"
             ]
           },
-          "HelloLambdaVersionloFyU9QEI3XHYUKnKED9iq61T5g8gRkHJmZJF9Yso": {
+          "HelloLambdaVersionWf8EZ8I4ntvz9mGdPTGFGUIBGMGpcStlNlv6IGZegQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "RegisterLambdaVersionx9A4CKxEAq1dVkxdl7alJapR6yMlaXRUlpry0Hcno": {
+          "RegisterLambdaVersion4ZYvrTwoT3n1oe2h0Z8OBege28UxXsMinhsKIH2Fo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "RegisterLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "LoginLambdaVersionvAKVJBitDnOSeHHkIzrnFoFOxYiD8J4aEgoy5QZjqso": {
+          "LoginLambdaVersionZdxQef60kQbZfxAEnpwjM6zyFjAQ4y3ngs4C3ctDo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "LoginLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "GetUsersLambdaVersionZ5BXEs4hzUbWWJiTN7nGkwOH5LEiQRdDhJuH6uaXzrs": {
+          "GetUsersLambdaVersion7NIq1okXUZ6sE8PmiBDV4uCfk1s2WHUp1PZ1kq39zs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetUsersLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "GetActiveSessionsLambdaVersionuxcuG7QWxfs0P9qPNvjNXK8B0cw90fXEusSgyMaBr4": {
+          "GetActiveSessionsLambdaVersionY0l9BS2n8aiSPEQdqKb164yMpt3zUoof4MeY5eqLA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetActiveSessionsLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "TestDatabaseLambdaVersionPlYY8KrqEUDW7wyRROaBx6FbYtOLjjhj8i9fUmbUDY": {
+          "TestDatabaseLambdaVersionJXh5KCqtP0UCfYHLbrvaqRngTP7rg7VabKQr4mpWYA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "TestDatabaseLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "GetPostgresDataLambdaVersionzW7Nx4Ba4lGJdcVK9eQjJ2BedqbITcpfERXAcRKtMtM": {
+          "GetPostgresDataLambdaVersionnc5cL5w5nLproGo2GtFqIX7yeILs6tkpHzesf6AvtQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetPostgresDataLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "S3DataProcessorLambdaVersionAWwl0pua2hVLmdtS4NxCIYej7JfUw9rlGm7jySrGys": {
+          "S3DataProcessorLambdaVersion42gH8PhQEK6cbq5bb0rOUmCTMv8drKTl9ZWuI5Vvo": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "S3DataProcessorLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
-          "CheckProcessedFilesLambdaVersionE3hy6pGlP3ES1wlThJuhRRE6y0VCg8gYKXqrhl6sf4": {
+          "CheckProcessedFilesLambdaVersionxcCyyb5nmDV2MZarGvn1qC1jTvZzL4RG9MjjO3zGoU": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CheckProcessedFilesLambdaFunction"
               },
-              "CodeSha256": "69gVUX+0lEPy9nTnFJETBEm6xJrM66f2ysYyFUQeqvg="
+              "CodeSha256": "tPTPuGUqe+EBSV8o98RX63gdw5W2LRLhx6jjg2DprqU="
             }
           },
           "ApiGatewayRestApi": {
@@ -1573,7 +1573,7 @@
               "CheckProcessedFilesLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1754023830455": {
+          "ApiGatewayDeployment1754466165261": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1965,7 +1965,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersionloFyU9QEI3XHYUKnKED9iq61T5g8gRkHJmZJF9Yso"
+              "Ref": "HelloLambdaVersionWf8EZ8I4ntvz9mGdPTGFGUIBGMGpcStlNlv6IGZegQ"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-HelloLambdaFunctionQualifiedArn"
@@ -1974,7 +1974,7 @@
           "RegisterLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "RegisterLambdaVersionx9A4CKxEAq1dVkxdl7alJapR6yMlaXRUlpry0Hcno"
+              "Ref": "RegisterLambdaVersion4ZYvrTwoT3n1oe2h0Z8OBege28UxXsMinhsKIH2Fo"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-RegisterLambdaFunctionQualifiedArn"
@@ -1983,7 +1983,7 @@
           "LoginLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "LoginLambdaVersionvAKVJBitDnOSeHHkIzrnFoFOxYiD8J4aEgoy5QZjqso"
+              "Ref": "LoginLambdaVersionZdxQef60kQbZfxAEnpwjM6zyFjAQ4y3ngs4C3ctDo"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-LoginLambdaFunctionQualifiedArn"
@@ -1992,7 +1992,7 @@
           "GetUsersLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetUsersLambdaVersionZ5BXEs4hzUbWWJiTN7nGkwOH5LEiQRdDhJuH6uaXzrs"
+              "Ref": "GetUsersLambdaVersion7NIq1okXUZ6sE8PmiBDV4uCfk1s2WHUp1PZ1kq39zs"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-GetUsersLambdaFunctionQualifiedArn"
@@ -2001,7 +2001,7 @@
           "GetActiveSessionsLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetActiveSessionsLambdaVersionuxcuG7QWxfs0P9qPNvjNXK8B0cw90fXEusSgyMaBr4"
+              "Ref": "GetActiveSessionsLambdaVersionY0l9BS2n8aiSPEQdqKb164yMpt3zUoof4MeY5eqLA"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-GetActiveSessionsLambdaFunctionQualifiedArn"
@@ -2010,7 +2010,7 @@
           "TestDatabaseLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "TestDatabaseLambdaVersionPlYY8KrqEUDW7wyRROaBx6FbYtOLjjhj8i9fUmbUDY"
+              "Ref": "TestDatabaseLambdaVersionJXh5KCqtP0UCfYHLbrvaqRngTP7rg7VabKQr4mpWYA"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-TestDatabaseLambdaFunctionQualifiedArn"
@@ -2019,7 +2019,7 @@
           "GetPostgresDataLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetPostgresDataLambdaVersionzW7Nx4Ba4lGJdcVK9eQjJ2BedqbITcpfERXAcRKtMtM"
+              "Ref": "GetPostgresDataLambdaVersionnc5cL5w5nLproGo2GtFqIX7yeILs6tkpHzesf6AvtQ"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-GetPostgresDataLambdaFunctionQualifiedArn"
@@ -2028,7 +2028,7 @@
           "S3DataProcessorLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "S3DataProcessorLambdaVersionAWwl0pua2hVLmdtS4NxCIYej7JfUw9rlGm7jySrGys"
+              "Ref": "S3DataProcessorLambdaVersion42gH8PhQEK6cbq5bb0rOUmCTMv8drKTl9ZWuI5Vvo"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-S3DataProcessorLambdaFunctionQualifiedArn"
@@ -2037,7 +2037,7 @@
           "CheckProcessedFilesLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CheckProcessedFilesLambdaVersionE3hy6pGlP3ES1wlThJuhRRE6y0VCg8gYKXqrhl6sf4"
+              "Ref": "CheckProcessedFilesLambdaVersionxcCyyb5nmDV2MZarGvn1qC1jTvZzL4RG9MjjO3zGoU"
             },
             "Export": {
               "Name": "sls-my-backend-clean-dev-CheckProcessedFilesLambdaFunctionQualifiedArn"
@@ -2189,9 +2189,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs18.x",
+        "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "HelloLambdaVersionloFyU9QEI3XHYUKnKED9iq61T5g8gRkHJmZJF9Yso"
+        "versionLogicalId": "HelloLambdaVersionWf8EZ8I4ntvz9mGdPTGFGUIBGMGpcStlNlv6IGZegQ"
       },
       "register": {
         "handler": "lambda/register-simple.handler",
@@ -2225,9 +2225,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs18.x",
+        "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "RegisterLambdaVersionx9A4CKxEAq1dVkxdl7alJapR6yMlaXRUlpry0Hcno"
+        "versionLogicalId": "RegisterLambdaVersion4ZYvrTwoT3n1oe2h0Z8OBege28UxXsMinhsKIH2Fo"
       },
       "login": {
         "handler": "lambda/login-simple.handler",
@@ -2261,9 +2261,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs18.x",
+        "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "LoginLambdaVersionvAKVJBitDnOSeHHkIzrnFoFOxYiD8J4aEgoy5QZjqso"
+        "versionLogicalId": "LoginLambdaVersionZdxQef60kQbZfxAEnpwjM6zyFjAQ4y3ngs4C3ctDo"
       },
       "getUsers": {
         "handler": "lambda/get-users-simple.handler",
@@ -2297,9 +2297,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs18.x",
+        "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "GetUsersLambdaVersionZ5BXEs4hzUbWWJiTN7nGkwOH5LEiQRdDhJuH6uaXzrs"
+        "versionLogicalId": "GetUsersLambdaVersion7NIq1okXUZ6sE8PmiBDV4uCfk1s2WHUp1PZ1kq39zs"
       },
       "getActiveSessions": {
         "handler": "lambda/get-active-sessions.handler",
@@ -2333,9 +2333,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs18.x",
+        "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "GetActiveSessionsLambdaVersionuxcuG7QWxfs0P9qPNvjNXK8B0cw90fXEusSgyMaBr4"
+        "versionLogicalId": "GetActiveSessionsLambdaVersionY0l9BS2n8aiSPEQdqKb164yMpt3zUoof4MeY5eqLA"
       },
       "testDatabase": {
         "handler": "lambda/test-database.handler",
@@ -2369,9 +2369,9 @@
         "package": {},
         "memory": 1024,
         "timeout": 6,
-        "runtime": "nodejs18.x",
+        "runtime": "nodejs20.x",
         "vpc": {},
-        "versionLogicalId": "TestDatabaseLambdaVersionPlYY8KrqEUDW7wyRROaBx6FbYtOLjjhj8i9fUmbUDY"
+        "versionLogicalId": "TestDatabaseLambdaVersionJXh5KCqtP0UCfYHLbrvaqRngTP7rg7VabKQr4mpWYA"
       },
       "getPostgresData": {
         "handler": "lambda/get-postgres-data.handler",
@@ -2413,8 +2413,8 @@
         "name": "my-backend-clean-dev-getPostgresData",
         "package": {},
         "memory": 1024,
-        "runtime": "nodejs18.x",
-        "versionLogicalId": "GetPostgresDataLambdaVersionzW7Nx4Ba4lGJdcVK9eQjJ2BedqbITcpfERXAcRKtMtM"
+        "runtime": "nodejs20.x",
+        "versionLogicalId": "GetPostgresDataLambdaVersionnc5cL5w5nLproGo2GtFqIX7yeILs6tkpHzesf6AvtQ"
       },
       "s3DataProcessor": {
         "handler": "lambda/s3-to-rds-processor.handler",
@@ -2431,8 +2431,8 @@
         "name": "my-backend-clean-dev-s3DataProcessor",
         "package": {},
         "memory": 1024,
-        "runtime": "nodejs18.x",
-        "versionLogicalId": "S3DataProcessorLambdaVersionAWwl0pua2hVLmdtS4NxCIYej7JfUw9rlGm7jySrGys"
+        "runtime": "nodejs20.x",
+        "versionLogicalId": "S3DataProcessorLambdaVersion42gH8PhQEK6cbq5bb0rOUmCTMv8drKTl9ZWuI5Vvo"
       },
       "checkProcessedFiles": {
         "handler": "lambda/check-processed-files.handler",
@@ -2474,8 +2474,8 @@
         "name": "my-backend-clean-dev-checkProcessedFiles",
         "package": {},
         "memory": 1024,
-        "runtime": "nodejs18.x",
-        "versionLogicalId": "CheckProcessedFilesLambdaVersionE3hy6pGlP3ES1wlThJuhRRE6y0VCg8gYKXqrhl6sf4"
+        "runtime": "nodejs20.x",
+        "versionLogicalId": "CheckProcessedFilesLambdaVersionxcCyyb5nmDV2MZarGvn1qC1jTvZzL4RG9MjjO3zGoU"
       }
     },
     "resources": {
@@ -2558,7 +2558,7 @@
     "artifact": "C:\\Users\\user\\Desktop\\AWS Serverless\\BackEnd\\.serverless\\my-backend-clean.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/my-backend-clean/dev/1754023869075-2025-08-01T04:51:09.075Z",
+    "artifactDirectoryName": "serverless/my-backend-clean/dev/1754466205698-2025-08-06T07:43:25.698Z",
     "artifact": "my-backend-clean.zip"
   }
 }
